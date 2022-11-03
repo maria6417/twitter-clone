@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './Feed.css';
+import Tweetbox from './Tweetbox';
 
 function Feed(props) {
   return (
@@ -12,6 +13,7 @@ function Feed(props) {
       </div>
 
       {/* Tweetbox */}
+      <Tweetbox />
 
       {/* Tweets */}
 
