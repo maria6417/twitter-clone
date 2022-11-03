@@ -24,14 +24,3 @@
 .sidebar-option--active {
   color: var(--twitter-color);
 }
-
-.sidebar__tweet {
-  background-color: var(--twitter-color) !important;
-  border: none !important;
-  color: white !important;
-  font-weight: 900 !important;
-  text-transform: inherit !important;
-  height: 50px !important;
-  margin-top: 20px !important;
-  border-radius: 30px !important;
-}

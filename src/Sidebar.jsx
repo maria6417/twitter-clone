@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import SidebarOption from './SidebarOption';
+import './Sidebar.css';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
@@ -14,8 +15,8 @@ import Button from '@mui/material/Button';
 
 function Sidebar(props) {
   return (
-    <div>
-      <TwitterIcon />
+    <div className="sidebar">
+      <TwitterIcon className="sidebar__twittericon"/>
 
       <SidebarOption active text="Home" Icon={HomeIcon} />
       <SidebarOption text="Explore" Icon={SearchIcon} />
