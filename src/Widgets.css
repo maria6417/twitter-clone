@@ -2,6 +2,16 @@
   flex: 0.25;
   padding: 20px;
   max-height: 100vh;
+  overflow-y: scroll;
+}
+
+.widgets::-webkit-scrollbar {
+  display: none;
+}
+
+.widgets {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .widgets__input {
