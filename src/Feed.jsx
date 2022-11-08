@@ -13,11 +13,6 @@ function Feed(props) {
     onSnapshot(q, (s) => {
       setPosts(s.docs.map((doc) => doc.data()))
     })
-    // console.log(db)
-    // onSnapshot(doc(db, 'posts'), (d) => {
-    //   setPosts(d.data());
-    // })
-    // console.log(db.collection('posts'));
   }, [])
 
   return (
@@ -30,7 +25,6 @@ function Feed(props) {
 
       <Tweetbox />
 
-      {/* Tweets */}
       {posts.map((p) => (
         <Post
           displayName={p.displayName}
@@ -41,8 +35,6 @@ function Feed(props) {
           avatar={p.avatar}
         />
       ))}
-
-
     </div>
   )
 }
