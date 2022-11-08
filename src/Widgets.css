@@ -1,6 +1,7 @@
 .widgets {
   flex: 0.25;
   padding: 20px;
+  max-height: 100vh;
 }
 
 .widgets__input {
@@ -25,4 +26,12 @@
 .widgets__widgetContainer {
   margin-top: 40px;
   margin-left: 20px;
+  padding: 20px;
+  background-color: #f5f8fa;
+  border-radius: 20px;
+}
+
+.widgets__widgetContainer > h2 {
+  font-size: 18px;
+  font-weight: 800;
 }
