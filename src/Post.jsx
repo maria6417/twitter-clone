@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
 import './Post.css';
 import Avatar from '@mui/material/Avatar';
@@ -8,16 +8,16 @@ import RepeatIcon from '@mui/icons-material/Repeat';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import PublishIcon from '@mui/icons-material/Publish';
 
-function Post({
+const Post = forwardRef(({
   displayName,
   username,
   verified,
   text,
   image,
   avatar,
-}) {
+}, ref) => {
   return (
-    <div className="post">
+    <div className="post" ref={ref}>
       <div className="post__avatar">
         <Avatar src={avatar} />
       </div>
@@ -48,7 +48,7 @@ function Post({
       </div>
     </div>
   )
-}
+});
 
 Post.propTypes = {}
 

@@ -18,11 +18,14 @@ function Tweetbox(props) {
       text,
       username: 'c00perLuvsYou',
       verfied: true,
+      created: new Date(),
     })
     console.log('here')
 
     setText('');
     setUrl('');
+    // re-render posts
+
   };
 
   return (
