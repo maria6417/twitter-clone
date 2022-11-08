@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { doc, onSnapshot, collection, query, where } from "firebase/firestore";
 import PropTypes from 'prop-types'
 import './Feed.css';
 import Tweetbox from './Tweetbox';
 import Post from './Post';
+import db from './firebase';
 
 function Feed(props) {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    const q = query(collection(db, 'posts'));
+    onSnapshot(q, (s) => {
+      setPosts(s.docs.map((doc) => doc.data()))
+    })
+    // console.log(db)
+    // onSnapshot(doc(db, 'posts'), (d) => {
+    //   setPosts(d.data());
+    // })
+    // console.log(db.collection('posts'));
+  }, [])
+
   return (
     <div className="feed">
       <div className="feed__header">
@@ -16,11 +31,17 @@ function Feed(props) {
       <Tweetbox />
 
       {/* Tweets */}
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      {posts.map((p) => (
+        <Post
+          displayName={p.displayName}
+          username={p.username}
+          verified={p.verified}
+          text={p.text}
+          image={p.image}
+          avatar={p.avatar}
+        />
+      ))}
+
 
     </div>
   )

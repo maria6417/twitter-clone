@@ -19,26 +19,26 @@ function Post({
   return (
     <div className="post">
       <div className="post__avatar">
-        <Avatar src="https://res.cloudinary.com/dl9zxpaoq/image/upload/v1661311474/Screen_Shot_2022-08-23_at_23.24.23_evggjc.png" />
+        <Avatar src={avatar} />
       </div>
       <div className="post__body">
         <div className="post__header">
           <div className="post__headerText">
             <h3>
-              Maria Hirai{" "}
+              {displayName}{" "}
               <span>
-                <VerifiedIcon className="post__verified"/>
+                {verified && <VerifiedIcon className="post__verified"/>}
               </span>
               <span className="post__username">
-                {" @mariah"}
+                {` @${username}`}
               </span>
             </h3>
           </div>
           <div className="post__text">
-            <p>Hi I am building a twitter clone!!!</p>
+            <p>{text}</p>
           </div>
         </div>
-        <img src="https://res.cloudinary.com/dl9zxpaoq/image/upload/v1661193898/qcgavbjivgyl7w3atmjh.png" />
+        <img src={image} />
         <div className="post__footer">
           <ChatBubbleOutlineOutlinedIcon fontSize="small" />
           <RepeatIcon fontSize="small" />
